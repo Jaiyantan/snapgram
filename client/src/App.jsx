@@ -21,7 +21,7 @@ export default function App() {
 
   async function fetchPhotos() {
     try {
-      const res = await fetch("http://54.80.178.52:4000/photos");
+      const res = await fetch("http://34.235.140.175:4000/photos");
       const data = await res.json();
       setPhotos(data);
     } catch {
@@ -50,7 +50,7 @@ export default function App() {
     form.append("photo", file);
 
     try {
-      const res = await fetch("http://54.80.178.52:4000/upload", { method: "POST", body: form });
+      const res = await fetch("http://34.235.140.175:4000/upload", { method: "POST", body: form });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
       setStatus({ type: "success", msg: "Uploaded! Lambda will generate the thumbnail shortly." });
